@@ -1,16 +1,8 @@
-﻿"""
-Simulación interactiva del Equipo 6 - Familia 3 (Probabilísticos y Estructurados).
-
-Ejecutar con:
-    streamlit run app/streamlit_app.py
-"""
-
-from __future__ import annotations
-
-import sys
-import os
-os.environ['MPLBACKEND'] = 'Agg'
-os.environ['MATPLOTLIBDATA'] = ''
+﻿import os
+os.environ['MPLBACKEND']='Agg'
+os.environ['MATPLOTLIBDATA']=''
+import matplotlib
+matplotlib.use('Agg', force=True)
 
 from pathlib import Path
 
@@ -420,6 +412,7 @@ with tab_comp:
 | LDA / QDA | Gaussianidad por clase; LDA comparte covarianza | Lineal (LDA) / cuadrática (QDA) | Interpretable y eficiente | QDA requiere más datos y regularización |
         """
     )
+
 
 
 
