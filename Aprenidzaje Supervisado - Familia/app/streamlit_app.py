@@ -3,7 +3,6 @@ os.environ['MPLBACKEND']='Agg'
 os.environ['MATPLOTLIBDATA']=''
 import matplotlib
 matplotlib.use('Agg', force=True)
-
 from pathlib import Path
 
 # Permite importar el paquete src cuando Streamlit se ejecuta desde la carpeta
@@ -412,6 +411,7 @@ with tab_comp:
 | LDA / QDA | Gaussianidad por clase; LDA comparte covarianza | Lineal (LDA) / cuadrática (QDA) | Interpretable y eficiente | QDA requiere más datos y regularización |
         """
     )
+
 
 
 
