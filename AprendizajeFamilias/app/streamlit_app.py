@@ -204,7 +204,7 @@ with tab_nb:
                     df_proba, x="probabilidad", y="clase", orientation="h",
                     title="Probabilidades por clase", range_x=[0, 1],
                 )
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig)
 
                 st.subheader("Palabras más influyentes por clase")
                 clase_pred_idx = int(np.where(clases_modelo == pred)[0][0])
@@ -215,7 +215,7 @@ with tab_nb:
                         df_pal.iloc[::-1], x="peso", y="palabra", orientation="h",
                         title=f"Top palabras para {nombre_pred}",
                     )
-                    st.plotly_chart(fig2, use_container_width=True)
+                    st.plotly_chart(fig2)
                 else:
                     st.info("El modelo no expone palabras informativas.")
     except Exception as exc:
@@ -371,7 +371,7 @@ with tab_disc:
                 "clase": modelo.classes_.astype(str),
                 "probabilidad": proba,
             })
-            st.dataframe(df_p, use_container_width=True)
+            st.dataframe(df_p)
     except Exception as exc:
         st.error(f"No se pudo ejecutar LDA/QDA: {exc}")
 
@@ -387,7 +387,7 @@ with tab_comp:
     ruta_comp = config.TABLES_DIR / "comparacion_modelos.csv"
     if ruta_comp.exists():
         df_comp = pd.read_csv(ruta_comp)
-        st.dataframe(df_comp, use_container_width=True)
+        st.dataframe(df_comp)
 
         fig = px.bar(
             df_comp,
@@ -396,7 +396,7 @@ with tab_comp:
             color="familia",
             title="Tiempo de entrenamiento por modelo (s)",
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig)
 
         st.info(
             "F1 macro y exactitud no son comparables con RMSE/R². "
