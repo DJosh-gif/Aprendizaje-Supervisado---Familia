@@ -8,9 +8,13 @@ Ejecutar con:
 from __future__ import annotations
 
 import sys
+import os
+os.environ['MPLBACKEND'] = 'Agg'
+os.environ['MATPLOTLIBDATA'] = ''
+
 from pathlib import Path
 
-# Permite importar el paquete src cuando Streamlit se ejecuta desde la raíz
+# Permite importar el paquete src cuando Streamlit se ejecuta desde la carpeta
 ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
@@ -18,17 +22,6 @@ if str(ROOT) not in sys.path:
 import numpy as np
 import pandas as pd
 import streamlit as st
-# Configuración de backend antes de importar pyplot
-import os
-os.environ.setdefault('MPLBACKEND', 'Agg')
-import matplotlib
-try:
-    matplotlib.use('Agg')
-except Exception:
-    pass
-# Configuración de backend antes de importar pyplot
-import os
-os.environ.setdefault('MPLBACKEND', 'Agg')
 import matplotlib.pyplot as plt
 import plotly.express as px
 
@@ -425,6 +418,8 @@ with tab_comp:
 | LDA / QDA | Gaussianidad por clase; LDA comparte covarianza | Lineal (LDA) / cuadrática (QDA) | Interpretable y eficiente | QDA requiere más datos y regularización |
         """
     )
+
+
 
 
 
