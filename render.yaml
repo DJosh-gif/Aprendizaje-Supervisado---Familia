@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: aprendizaje-familias
+    env: python
+    buildCommand: pip install -r "AprendizajeFamilias/requirements.txt"
+    startCommand: cd "AprendizajeFamilias" && streamlit run app/streamlit_app.py --server.port=$PORT --server.address=0.0.0.0
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
