@@ -18,11 +18,17 @@ if str(ROOT) not in sys.path:
 import numpy as np
 import pandas as pd
 import streamlit as st
+# Configuración de backend antes de importar pyplot
+import os
+os.environ.setdefault('MPLBACKEND', 'Agg')
 import matplotlib
 try:
     matplotlib.use('Agg')
 except Exception:
     pass
+# Configuración de backend antes de importar pyplot
+import os
+os.environ.setdefault('MPLBACKEND', 'Agg')
 import matplotlib.pyplot as plt
 import plotly.express as px
 
@@ -419,5 +425,6 @@ with tab_comp:
 | LDA / QDA | Gaussianidad por clase; LDA comparte covarianza | Lineal (LDA) / cuadrática (QDA) | Interpretable y eficiente | QDA requiere más datos y regularización |
         """
     )
+
 
 
