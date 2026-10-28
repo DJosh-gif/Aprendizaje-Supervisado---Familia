@@ -1,4 +1,8 @@
 ﻿import os
+os.environ['MPLBACKEND']='Agg'
+os.environ['MATPLOTLIBDATA']=''
+import sys
+import os
 import sys
 os.environ['MPLBACKEND']='Agg'
 os.environ['MATPLOTLIBDATA']=''
@@ -412,6 +416,7 @@ with tab_comp:
 | LDA / QDA | Gaussianidad por clase; LDA comparte covarianza | Lineal (LDA) / cuadrática (QDA) | Interpretable y eficiente | QDA requiere más datos y regularización |
         """
     )
+
 
 
 
