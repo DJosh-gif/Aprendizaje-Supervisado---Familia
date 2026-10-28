@@ -19,7 +19,10 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import matplotlib
-matplotlib.use("Agg")
+try:
+    matplotlib.use('Agg')
+except Exception:
+    pass
 import matplotlib.pyplot as plt
 import plotly.express as px
 
@@ -416,4 +419,5 @@ with tab_comp:
 | LDA / QDA | Gaussianidad por clase; LDA comparte covarianza | Lineal (LDA) / cuadrática (QDA) | Interpretable y eficiente | QDA requiere más datos y regularización |
         """
     )
+
 

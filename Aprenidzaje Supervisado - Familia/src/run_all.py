@@ -1,4 +1,4 @@
-"""
+﻿"""
 Ejecuta todos los experimentos del Equipo 6 (Familia 3) y guarda resultados.
 
 Uso:
@@ -877,3 +877,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
